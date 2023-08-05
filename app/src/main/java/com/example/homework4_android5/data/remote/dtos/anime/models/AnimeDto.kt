@@ -1,7 +1,7 @@
-package com.example.homework4_android5.data.dtos.anime.models
+package com.example.homework4_android5.data.remote.dtos.anime.models
 
-import com.example.homework4_android5.data.dtos.anime.attributes.AttributesDto
-import com.example.homework4_android5.data.dtos.anime.attributes.toDomain
+import com.example.homework4_android5.data.remote.dtos.anime.attributes.AttributesDto
+import com.example.homework4_android5.data.remote.dtos.anime.attributes.toDomain
 import com.example.homework4_android5.domain.models.models.Anime
 import com.google.gson.annotations.SerializedName
 

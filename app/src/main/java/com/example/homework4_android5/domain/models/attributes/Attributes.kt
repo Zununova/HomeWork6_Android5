@@ -11,5 +11,4 @@ data class Attributes(
     val detail: String,
     val posterImage: Image?,
     val averageRating: String,
-//    val coverImage: Image
 )

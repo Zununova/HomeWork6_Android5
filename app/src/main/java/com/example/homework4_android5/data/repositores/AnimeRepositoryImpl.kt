@@ -1,7 +1,7 @@
 package com.example.homework4_android5.data.repositores
 
-import com.example.homework4_android5.data.dtos.anime.models.toDomain
 import com.example.homework4_android5.data.remote.apiservice.AnimeApiService
+import com.example.homework4_android5.data.remote.dtos.anime.models.toDomain
 import com.example.homework4_android5.domain.Either
 import com.example.homework4_android5.domain.models.models.Anime
 import com.example.homework4_android5.domain.models.models.DataModel

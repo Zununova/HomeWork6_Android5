@@ -1,8 +1,8 @@
 package com.example.homework4_android5.data.remote.apiservice
 
-import com.example.homework4_android5.data.dtos.anime.Response
-import com.example.homework4_android5.data.dtos.anime.models.AnimeDto
-import com.example.homework4_android5.data.dtos.anime.models.DataModelDto
+import com.example.homework4_android5.data.remote.dtos.anime.Response
+import com.example.homework4_android5.data.remote.dtos.anime.models.AnimeDto
+import com.example.homework4_android5.data.remote.dtos.anime.models.DataModelDto
 import retrofit2.http.GET
 import retrofit2.http.Path
 

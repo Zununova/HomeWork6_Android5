@@ -1,4 +1,4 @@
-package com.example.homework4_android5.data.dtos.anime
+package com.example.homework4_android5.data.remote.dtos.anime
 
 import com.google.gson.annotations.SerializedName
 
