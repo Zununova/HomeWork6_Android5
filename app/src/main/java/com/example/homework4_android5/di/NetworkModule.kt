@@ -1,6 +1,5 @@
 package com.example.homework4_android5.di
 
-import com.example.homework4_android5.data.remote.apiservice.AnimeApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -35,6 +34,6 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideAnimeApiService(retrofit: Retrofit): AnimeApiService =
-        retrofit.create(AnimeApiService::class.java)
+    fun provideAnimeApiService(retrofit: Retrofit): com.example.data.remote.apiservice.AnimeApiService =
+        retrofit.create(com.example.data.remote.apiservice.AnimeApiService::class.java)
 }
