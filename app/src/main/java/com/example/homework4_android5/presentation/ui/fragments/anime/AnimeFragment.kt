@@ -4,7 +4,9 @@ import android.content.ContentValues.TAG
 import android.util.Log
 import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -40,18 +42,21 @@ class AnimeFragment : BaseFragment<FragmentAnimeBinding, AnimeViewModel>(R.layou
     }
 
     override fun setupSubscribes() {
-        lifecycleScope.launch {
-            viewModel.animeState.collect {
-                when (it) {
-                    is UIState.Error -> Log.e(TAG, it.message)
-                    is UIState.Loading -> {
-                        binding.pbAnimeFragment.visibility = View.VISIBLE
-                        binding.recyclerViewAnime.visibility = View.GONE
-                    }
-                    is UIState.Success -> {
-                        binding.pbAnimeFragment.visibility = View.GONE
-                        binding.recyclerViewAnime.visibility = View.VISIBLE
-                        animeAdapter.submitList(it.data)
+        viewLifecycleOwner.lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.animeState.collect {
+                    when (it) {
+                        is UIState.Error -> Log.e(TAG, it.message)
+                        is UIState.Loading -> {
+                            binding.pbAnimeFragment.visibility = View.VISIBLE
+                            binding.recyclerViewAnime.visibility = View.GONE
+                        }
+
+                        is UIState.Success -> {
+                            binding.pbAnimeFragment.visibility = View.GONE
+                            binding.recyclerViewAnime.visibility = View.VISIBLE
+                            animeAdapter.submitList(it.data)
+                        }
                     }
                 }
             }
