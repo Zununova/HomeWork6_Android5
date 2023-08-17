@@ -1,6 +1,6 @@
 package com.example.domain.usecase
 
-import com.example.domain.repositores.AnimeRepository
+import com.example.domain.repositories.AnimeRepository
 import javax.inject.Inject
 
 class FetchAnimeUseCase @Inject constructor(private val repository: AnimeRepository) {

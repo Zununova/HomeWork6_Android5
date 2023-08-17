@@ -1,11 +1,11 @@
-package com.example.data.repositores
+package com.example.data.repositories
 
 import com.example.data.remote.apiservice.AnimeApiService
 import com.example.data.remote.dtos.anime.models.toDomain
 import com.example.domain.either.Either
 import com.example.domain.models.models.Anime
 import com.example.domain.models.models.DataModel
-import com.example.domain.repositores.AnimeRepository
+import com.example.domain.repositories.AnimeRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
