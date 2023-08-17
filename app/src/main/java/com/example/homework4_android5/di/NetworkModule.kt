@@ -13,7 +13,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
-val BASE_URL: String = BuildConfig.BASE_URL
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
@@ -30,7 +29,7 @@ object NetworkModule {
     @Provides
     @Singleton
     fun provideRetrofitClient(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
-        .baseUrl(BASE_URL)
+        .baseUrl(BuildConfig.BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .client(okHttpClient)
         .build()
